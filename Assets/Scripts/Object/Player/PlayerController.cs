@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private PlayerInput _input;
+    private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
 
     private InputAction moveAction;
 
@@ -13,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _input = GetComponent<PlayerInput>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponentInChildren<Animator>();
 
         moveAction = _input.actions["Move"];
 
@@ -27,6 +31,14 @@ public class PlayerController : MonoBehaviour
         if(moveInput != Vector2.zero)
         {
             transform.Translate(moveInput * moveSpeed * Time.fixedDeltaTime);
+            _animator.SetBool("isMoving", true);
+
+            if(moveInput.x > 0) _spriteRenderer.flipX = false;
+            else if(moveInput.x < 0) _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _animator.SetBool("isMoving", false);
         }
     }
 
