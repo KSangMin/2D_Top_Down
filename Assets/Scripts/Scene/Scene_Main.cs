@@ -6,6 +6,6 @@ public class Scene_Main : Scene
     {
         base.Init();
 
-        int i = DataManager.Instance.itemDict.Count;
+        UIManager.Instance.ShowUI<UI_Collection>();
     }
 }
