@@ -1202,9 +1202,7 @@ MonoBehaviour:
   monsterPrefabs:
   - {fileID: 476587913694504081, guid: f2f306623dceb4f41b083fc7dda9cd23, type: 3}
   - {fileID: 476587913694504081, guid: ce114156b10104c48820cd436db4935c, type: 3}
-  - {fileID: 476587913694504081, guid: ed69dd18fe008e9409e5932728bb6f29, type: 3}
-  - {fileID: 476587913694504081, guid: 457ea010509c8d54092209626ae9df01, type: 3}
-  - {fileID: 476587913694504081, guid: 4a23a3c7026ed9d48aea7411d9bc1268, type: 3}
+  spawnInterval: 3
 --- !u!4 &384415072
 Transform:
   m_ObjectHideFlags: 0
@@ -5643,7 +5641,7 @@ GameObject:
   - component: {fileID: 877750991}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

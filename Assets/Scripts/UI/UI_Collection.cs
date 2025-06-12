@@ -34,10 +34,12 @@ public class UI_Collection : UI
         {
             if (collectionPanel.gameObject.activeSelf)
             {
+                Time.timeScale = 1f;
                 collectionPanel.gameObject.SetActive(false);
             }
             else
             {
+                Time.timeScale = 0f;
                 infoPanel.gameObject.SetActive(false);
                 collectionPanel.gameObject.SetActive(true);
             }

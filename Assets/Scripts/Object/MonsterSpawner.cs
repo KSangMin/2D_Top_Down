@@ -10,7 +10,7 @@ public class MonsterSpawner : MonoBehaviour
 
     [SerializeField] private List<GameObject> monsterPrefabs;
 
-    [SerializeField] private float spawnInterval = 1f;
+    [SerializeField] private float spawnInterval = 3f;
 
     private void Start()
     {

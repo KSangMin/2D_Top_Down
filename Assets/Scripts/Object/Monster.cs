@@ -21,6 +21,8 @@ public class Monster : Poolable, IDamageable
     private float hpScaleX;
     private float hpScaleY;
 
+    [SerializeField] private GameObject itemPrefab;
+
     private void Awake()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -96,6 +98,8 @@ public class Monster : Poolable, IDamageable
 
     public void Dead()
     {
+        if (Random.Range(0f, 1f) <= 0.5f) PoolManager.Instance.Get(itemPrefab).transform.position = transform.position;
+
         _animator.SetBool("isDead", true);
 
         PoolManager.Instance.Release(this);

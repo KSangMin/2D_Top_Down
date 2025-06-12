@@ -37,9 +37,21 @@ public class Stat
         CurValue = Mathf.Min(CurValue + amount, maxValue);
     }
 
+    public void Extend(float amount)
+    {
+        maxValue += amount;
+        CurValue += amount;
+    }
+
     public void Subtract(float amount)
     {
         CurValue = Mathf.Max(CurValue - amount, minValue);
+    }
+
+    public void Shrink(float amount)
+    {
+        CurValue = MathF.Min(CurValue - amount, minValue);
+        maxValue -= amount;
     }
 
     public float GetPercentage()

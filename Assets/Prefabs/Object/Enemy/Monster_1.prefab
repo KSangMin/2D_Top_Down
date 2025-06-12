@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: M0001
   hpBar: {fileID: 7355279471478558692}
+  itemPrefab: {fileID: 5127272516869698300, guid: 7f85bd7ba0c256244af9400c43b14244, type: 3}
 --- !u!1 &6284929422849283408
 GameObject:
   m_ObjectHideFlags: 0

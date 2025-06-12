@@ -44,13 +44,21 @@ public class PlayerCondition : MonoBehaviour, IDamageable
         sequence.Play();
 
         if (HP.CurValue <= HP.minValue) Dead();
-
-        Debug.Log(damage);
     }
 
     public void Dead()
     {
         player.isDead = true;
         controller.Dead();
+    }
+
+    public void AddItemStat(int itemId)
+    {
+        ItemData data = DataManager.Instance.itemDict[itemId];
+
+        Debug.Log($"{data.MaxHP}, {data.MaxAtk}");
+
+        HP.Extend(data.MaxHP);
+        Attack.Extend(data.MaxAtk);
     }
 }
