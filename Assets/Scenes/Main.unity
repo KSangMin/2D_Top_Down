@@ -5634,6 +5634,8 @@ GameObject:
   - component: {fileID: 877750995}
   - component: {fileID: 877750996}
   - component: {fileID: 877750993}
+  - component: {fileID: 877750998}
+  - component: {fileID: 877750997}
   - component: {fileID: 877750991}
   m_Layer: 0
   m_Name: Player
@@ -5767,6 +5769,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0034754872, y: -0.031279564}
   m_Size: {x: 0.7710892, y: 1.0625591}
   m_Direction: 0
+--- !u!114 &877750997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877750989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca9dd9c47a2699429bdce25addd8e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &877750998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877750989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba1bc3f69e2b7147ac44ef016429ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!1 &1591927846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,5 +5847,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 460857707}
-  - {fileID: 877750990}
   - {fileID: 1591927848}
+  - {fileID: 877750990}

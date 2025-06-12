@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour, IDamageable
+public class PlayerController : MonoBehaviour
 {
-    private PlayerInput _input;
-    private SpriteRenderer _spriteRenderer;
-    private Animator _animator;
+    private Player player;
+    private PlayerInput input;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     private InputAction moveAction;
 
@@ -14,33 +15,34 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        _input = GetComponent<PlayerInput>();
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _animator = GetComponentInChildren<Animator>();
+        player = GetComponent<Player>();
+        input = GetComponent<PlayerInput>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
 
-        moveAction = _input.actions["Move"];
+        moveAction = input.actions["Move"];
 
         moveAction.performed -= OnMove;
         moveAction.canceled -= OnMove;
         moveAction.performed += OnMove;
         moveAction.canceled += OnMove;
-
-        GameManager.Instance.player = this;
     }
 
     private void FixedUpdate()
     {
-        if(moveInput != Vector2.zero)
+        if(player.isDead) return;
+
+        if (moveInput != Vector2.zero)
         {
             transform.Translate(moveInput * moveSpeed * Time.fixedDeltaTime);
-            _animator.SetBool("isMoving", true);
+            animator.SetBool("isMoving", true);
 
-            if(moveInput.x > 0) _spriteRenderer.flipX = false;
-            else if(moveInput.x < 0) _spriteRenderer.flipX = true;
+            if(moveInput.x > 0) spriteRenderer.flipX = false;
+            else if(moveInput.x < 0) spriteRenderer.flipX = true;
         }
         else
         {
-            _animator.SetBool("isMoving", false);
+            animator.SetBool("isMoving", false);
         }
     }
 
@@ -50,13 +52,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         if(context.canceled) moveInput = Vector2.zero;
     }
 
-    public void TakeDamage(float damage)
-    {
-        Debug.Log(damage);
-    }
-
     public void Dead()
     {
-        
+        animator.SetTrigger("Dead");
     }
 }

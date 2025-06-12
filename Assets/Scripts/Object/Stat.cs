@@ -13,7 +13,7 @@ public class Stat
             {
                 _curValue = value;
                 OnStatChanged?.Invoke();
-                OnStatChangedWithFloat?.Invoke(GetPercentage());
+                OnStatPercentageChanged?.Invoke(GetPercentage());
             }
         }
     }
@@ -22,7 +22,7 @@ public class Stat
     private float startValue;
 
     public Action OnStatChanged;
-    public Action<float> OnStatChangedWithFloat;
+    public Action<float> OnStatPercentageChanged;
 
     public Stat(float startValue, float maxValue, float minValue = 0f)
     {

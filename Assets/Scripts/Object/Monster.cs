@@ -38,7 +38,7 @@ public class Monster : Poolable, IDamageable
         hpScaleX = hpBar.transform.localScale.x;
         hpScaleY = hpBar.transform.localScale.y;
 
-        HP.OnStatChangedWithFloat += (percentage) =>
+        HP.OnStatPercentageChanged += (percentage) =>
         {
             hpBar.transform.localScale = new Vector3(percentage * hpScaleX, hpScaleY, 1f);
         };
@@ -82,7 +82,7 @@ public class Monster : Poolable, IDamageable
         {
             attackTimer = 0;
 
-            GameManager.Instance.player.TakeDamage(data.Attack);
+            GameManager.Instance.player.condition.TakeDamage(data.Attack);
         }
     }
 
