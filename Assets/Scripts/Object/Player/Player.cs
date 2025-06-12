@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public PlayerCondition condition;
     [HideInInspector] public PlayerController controller;
 
-    public bool isDead;
+    [HideInInspector] public bool isDead;
 
     private void Awake()
     {

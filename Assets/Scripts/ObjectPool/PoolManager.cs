@@ -105,6 +105,8 @@ public class PoolManager : Singleton<PoolManager>
 
     public void Release(Poolable poolable)
     {//Destroy 대용
+        if (poolable.gameObject.activeSelf == false) return;
+
         string name = poolable.gameObject.name;
 
         if (_poolDict.ContainsKey(name) == true) _poolDict[name].Push(poolable);

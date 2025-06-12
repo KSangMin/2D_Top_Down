@@ -10,6 +10,8 @@ public class MonsterSpawner : MonoBehaviour
 
     [SerializeField] private List<GameObject> monsterPrefabs;
 
+    [SerializeField] private float spawnInterval = 1f;
+
     private void Start()
     {
         StartCoroutine(Spawn());
@@ -24,7 +26,7 @@ public class MonsterSpawner : MonoBehaviour
 
         PickRandom(randomPos);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(spawnInterval);
 
         StartCoroutine(Spawn());
     }

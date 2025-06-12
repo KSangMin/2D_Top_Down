@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4063699204262265659}
   - component: {fileID: 2587832793432226650}
   - component: {fileID: 7426795787679407721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,9 +118,9 @@ GameObject:
   - component: {fileID: 2654697813426678911}
   - component: {fileID: 7930867584847404422}
   - component: {fileID: 2033718077167849084}
-  m_Layer: 0
-  m_Name: Enemy_2
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: Monster_5
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339e4aa512ea2174d921f9fe8e13c67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: M0001
+  id: M0005
   hpBar: {fileID: 7355279471478558692}
 --- !u!1 &6284929422849283408
 GameObject:
@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5300979393885347840}
   - component: {fileID: 7355279471478558692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1201,6 +1201,10 @@ MonoBehaviour:
     height: 16
   monsterPrefabs:
   - {fileID: 476587913694504081, guid: f2f306623dceb4f41b083fc7dda9cd23, type: 3}
+  - {fileID: 476587913694504081, guid: ce114156b10104c48820cd436db4935c, type: 3}
+  - {fileID: 476587913694504081, guid: ed69dd18fe008e9409e5932728bb6f29, type: 3}
+  - {fileID: 476587913694504081, guid: 457ea010509c8d54092209626ae9df01, type: 3}
+  - {fileID: 476587913694504081, guid: 4a23a3c7026ed9d48aea7411d9bc1268, type: 3}
 --- !u!4 &384415072
 Transform:
   m_ObjectHideFlags: 0
@@ -5673,6 +5677,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc8cb766fb02c848960bfb55df21c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  ProjectilePrefab: {fileID: 1242960766440758512, guid: 5490dbbb30cbed54b863c85c1b958a7e, type: 3}
+  attackRange: 9
+  attackCooldown: 1
 --- !u!114 &877750993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5781,6 +5789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca9dd9c47a2699429bdce25addd8e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHPChanged: {fileID: 11400000, guid: 1cd5fc974af04e04a991cc40d83081a0, type: 2}
+  OnAttackChanged: {fileID: 11400000, guid: 6c29bbabdca6c7f44af46447db656f2f, type: 2}
 --- !u!114 &877750998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5795,6 +5805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
   controller: {fileID: 0}
+  isDead: 0
 --- !u!1 &1591927846
 GameObject:
   m_ObjectHideFlags: 0

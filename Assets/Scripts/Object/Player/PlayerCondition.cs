@@ -6,8 +6,8 @@ public class PlayerCondition : MonoBehaviour, IDamageable
     private Player player;
     private PlayerController controller;
 
-    private Stat HP;
-    private Stat Attack;
+    private Stat HP = new Stat(1000, 1000, 0);
+    private Stat Attack = new Stat(20, 999, 0);
 
     [SerializeField] private FloatEventChannel OnHPChanged;
     [SerializeField] private FloatEventChannel OnAttackChanged;
@@ -17,9 +17,6 @@ public class PlayerCondition : MonoBehaviour, IDamageable
         player = GetComponent<Player>();
         controller = GetComponent<PlayerController>();
 
-        HP = new Stat(100, 100, 0);
-        Attack = new Stat(20, 999, 0);
-
         HP.OnStatPercentageChanged += (percentage) => OnHPChanged.RaiseEvent(percentage);
         Attack.OnStatChanged += () => OnAttackChanged.RaiseEvent(Attack.CurValue);
     }
@@ -28,6 +25,11 @@ public class PlayerCondition : MonoBehaviour, IDamageable
     {
         OnHPChanged.RaiseEvent(HP.GetPercentage());
         OnAttackChanged.RaiseEvent(Attack.CurValue);
+    }
+
+    public int GetAttack()
+    {
+        return (int)Attack.CurValue;
     }
 
     public void TakeDamage(float damage)
