@@ -10,6 +10,11 @@ public class DataManager : Singleton<DataManager>
     {
         base.Awake();
 
+        LoadAll();
+    }
+
+    public void LoadAll()
+    {
         itemDict = LoadJson<ItemDataLoader, int, ItemData>("Item").MakeDict();
         monsterDict = LoadJson<MonsterDataLoader, string, MonsterData>("Monster").MakeDict();
     }

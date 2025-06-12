@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     private PlayerInput _input;
     private SpriteRenderer _spriteRenderer;
@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
         moveAction.canceled -= OnMove;
         moveAction.performed += OnMove;
         moveAction.canceled += OnMove;
+
+        GameManager.Instance.player = this;
     }
 
     private void FixedUpdate()
@@ -46,5 +48,15 @@ public class PlayerController : MonoBehaviour
     {
         if(context.performed) moveInput = context.ReadValue<Vector2>().normalized;
         if(context.canceled) moveInput = Vector2.zero;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log(damage);
+    }
+
+    public void Dead()
+    {
+        
     }
 }

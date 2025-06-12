@@ -19,8 +19,7 @@ public class Stat
     }
     public float minValue;
     public float maxValue;
-    public float startValue;
-    //public float passiveValue;
+    private float startValue;
 
     public Action OnStatChanged;
     public Action<float> OnStatChangedWithFloat;
@@ -46,5 +45,10 @@ public class Stat
     public float GetPercentage()
     {
         return CurValue / maxValue;
+    }
+
+    public void Reset()
+    {
+        CurValue = maxValue;
     }
 }
