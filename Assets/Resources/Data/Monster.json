@@ -14,7 +14,7 @@
       "MoveSpeed": 1,
       "MinExp": 11,
       "MaxExp": 22,
-      "DropItem": [30002]
+      "DropItem": [10000]
     },
     {
       "MonsterID": "M0002",
@@ -30,7 +30,7 @@
       "MoveSpeed": 2,
       "MinExp": 10,
       "MaxExp": 20,
-      "DropItem": [30000]
+      "DropItem": [10001]
     },
     {
       "MonsterID": "M0003",
@@ -46,7 +46,7 @@
       "MoveSpeed": 1,
       "MinExp": 12,
       "MaxExp": 24,
-      "DropItem": [30001]
+      "DropItem": [10000]
     },
     {
       "MonsterID": "M0004",
@@ -62,7 +62,7 @@
       "MoveSpeed": 2,
       "MinExp": 13,
       "MaxExp": 26,
-      "DropItem": [30004]
+      "DropItem": [10001]
     },
     {
       "MonsterID": "M0005",
@@ -78,7 +78,7 @@
       "MoveSpeed": 2,
       "MinExp": 14,
       "MaxExp": 28,
-      "DropItem": [20000]
+      "DropItem": [10000]
     }
   ]
 }

@@ -6,7 +6,7 @@ public class PlayerCondition : MonoBehaviour, IDamageable
     private Player player;
     private PlayerController controller;
 
-    private Stat HP = new Stat(1000, 1000, 0);
+    private Stat HP = new Stat(100, 100, 0);
     private Stat Attack = new Stat(20, 999, 0);
 
     [SerializeField] private FloatEventChannel OnHPChanged;
@@ -50,6 +50,9 @@ public class PlayerCondition : MonoBehaviour, IDamageable
     {
         player.isDead = true;
         controller.Dead();
+
+        Time.timeScale = 0f;
+        UIManager.Instance.ShowUI<UI_End>();
     }
 
     public void AddItemStat(int itemId)

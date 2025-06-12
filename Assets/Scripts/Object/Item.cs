@@ -5,21 +5,9 @@ public class Item : Poolable
 {
     [SerializeField] private int id = 0;
 
-    private void Awake()
+    public void Init(int itemId)
     {
-        PickRandomId();
-    }
-
-    private void OnEnable()
-    {
-        PickRandomId();
-    }
-
-    void PickRandomId()
-    {
-        int randIndex = Random.Range(0, DataManager.Instance.itemDict.Count);
-        int itemID = DataManager.Instance.itemDict.Keys.ToList()[randIndex];
-        id = itemID;
+        id = itemId;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
